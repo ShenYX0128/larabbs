@@ -19,11 +19,11 @@
         @else
         <li class="nav-item dropdown">
           <a href="" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <img src="https://iocaffcdn.phphub.org/uploads/images/201709/20/1/PtDKbASVcz.png" class="img-responsive img-circle" width="30px" height="30px">
+            <img src="https://laravel-china.org/uploads/images/201709/20/1/PtDKbASVcz.png" class="img-responsive img-circle" width="30px" height="30px">
             {{ Auth::user()->name }}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="">个人中心</a>
+            <a class="dropdown-item" href="{{ route('users.show',Auth::user()) }}">个人中心</a>
             <a class="dropdown-item" href="">编辑资料</a>
             <div class="dropdown-divider"></div>
             <a href="#" class="dropdown-item" id="logout">
