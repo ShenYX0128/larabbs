@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs user-info">
       <div class="card">
-        <img src="https://laravel-china.org/uploads/images/201709/20/1/PtDKbASVcz.png" alt="{{ $user->name }}" width="255px" height="255px">
+        <img src="{{ $user->avatar }}" alt="{{ $user->name }}" width="255px" height="255px">
         <div class="card-body">
           <h5><strong>个人简历</strong></h5>
           <p>{{ $user->introduction }}</p>
