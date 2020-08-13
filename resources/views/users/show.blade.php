@@ -7,10 +7,10 @@
         <img src="https://laravel-china.org/uploads/images/201709/20/1/PtDKbASVcz.png" alt="{{ $user->name }}" width="255px" height="255px">
         <div class="card-body">
           <h5><strong>个人简历</strong></h5>
-          <p>一个乐观向上的码农</p>
+          <p>{{ $user->introduction }}</p>
           <hr>
           <h5><strong>注册于</strong></h5>
-          <p>today</p>
+          <p>{{ $user->created_at->diffForHumans() }}</p>
         </div>
       </div>
 
