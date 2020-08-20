@@ -13,8 +13,8 @@
     <div class="card ">
       <div class="card-header bg-transparent">
         <ul class="nav nav-pills">
-          <li class="nav-item "><a class="nav-link active" href="#">最后回复</a></li>
-          <li class="nav-item "><a class="nav-link" href="#">最后发布</a></li>
+          <li class="nav-item {{ active_class(! if_query('order','recent')) }}"><a class="nav-link active" href="{{ Request::url() }}">最后回复</a></li>
+          <li class="nav-item {{ active_class(! if_query('order','recent')) }}"><a class="nav-link" href="{{ Request::url() }}">最后发布</a></li>
         </ul>
       </div>
 
