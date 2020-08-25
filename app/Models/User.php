@@ -37,4 +37,12 @@ class User extends Authenticatable implements MustVerifyEmailContract
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * 构建权限控制
+     */
+    public function isAuthorOf($model)
+    {
+        return $this->id == $model->user_id;
+    }
 }
