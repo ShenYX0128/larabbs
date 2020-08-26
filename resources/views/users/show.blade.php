@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-3 col-md-3 hidden-sm hidden-xs user-info">
       <div class="card">
-        <img src="{{ $user->avatar }}" alt="{{ $user->name }}">
+        <img src="{{ $user->avatar }}" alt="{{ $user->name }}" width="253px" height="253px">
         <div class="card-body">
           <h5><strong>个人简历</strong></h5>
           <p>{{ $user->introduction }}</p>
@@ -26,7 +26,19 @@
         {{-- 用户发布内容 --}}
         <div class="card">
           <div class="card-body">
-            暂无数据 ~_~
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a href="{{ route('users.show',$user->id) }}" class="nav-link bg-transparent {{ active_class(if_query('tab',null)) }}">他的话题</a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ route('users.show',[$user->id,'tab' => 'replies']) }}" class="nav-link bg-transparent {{ active_class(if_query('tab','replies')) }}">他的回复</a>
+              </li>
+            </ul>
+            @if(if_query('tab','replies'))
+              @include('users._replies',['replies' => $user->replies()->with('topic')->recent()->paginate(5)])
+            @else
+              @include('users._topics',['topics' => $user->topics()->recent()->paginate(5)])
+            @endif
           </div>
         </div>
       </div>

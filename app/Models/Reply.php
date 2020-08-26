@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+// use Illuminate\Database\Eloquent\Model;
 
 class Reply extends Model
 {
@@ -18,4 +18,8 @@ class Reply extends Model
     {
         return $this->belongsTo(User::class);
     }
+ /*   public function scopeRecent($query)
+    {
+        return $query->orderBy('id', 'desc');
+    }*/
 }
